@@ -1,0 +1,220 @@
+/*除去基本常用标签的margin padding值*/
+html,body,div,ul,li,a,i,em,span,section,b,audio,article,button,input,dd,dt,dl,footer,h1,h2,h3,h4,h5,h6,head,header,img,label,p,strong,table,textarea,select{
+	margin:0;
+	padding:0;
+}
+audio,
+canvas,
+progress,
+video {
+ 	display: inline-block; // 1
+  	vertical-align: baseline; // 2
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  	display: block;
+}
+
+img{
+	border:0;
+}
+
+a{
+	text-decoration: none;
+	outline: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0); 
+	/*Removes the dark touch outlines on links in webkit browsers*/
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+/*去除ul li的默认样式*/
+ul,li{
+	list-style-type: none;
+}
+
+
+::-webkit-input-placeholder { 
+	color:#cacaca; 
+}
+/*加全局隐藏样式*/
+.hide {
+	display: none !important;
+}
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+    -webkit-appearance: none;
+    border-radius: 3px;
+    outline: none;
+    border:0;
+}
+/*1px 线问题汇总*/
+.bdb,.bdt,.bdl,.bdr,{
+    position: relative;
+}
+.bdb:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid #ECECEC;
+    color: #e0e0e0;
+    pointer-events: none;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 0;
+}
+.bdt:before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #ECECEC;
+    color: #e0e0e0;
+    pointer-events: none;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 0;
+}
+.bdl:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-left: 1px solid #ECECEC;
+    color: #e0e0e0;
+    pointer-events: none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 0;
+}
+.bdr:before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-right: 1px solid #ECECEC;
+    color: #e0e0e0;
+    pointer-events: none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 0;
+}
+.u_btn {
+    display: inline-block;
+    padding: 0 12px;
+    vertical-align: top;
+    position: relative;
+    border-radius: 6px;
+    border: 0 none;
+    text-align: center;
+    cursor: pointer;
+}
+.u_btn::after {
+    pointer-events: none;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    content: "\0020";
+    border-color: #ECECEC;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    pointer-events: none;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+@media  (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+  .u_btn::after {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media  (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+  .u_btn::after {
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+  .u_btn::after {
+    width: 300%;
+    height: 300%;
+    -webkit-transform: scale(0.33333);
+    transform: scale(0.33333);
+  }
+}
+@media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+  .bdb::before,.bdt::before,.bdl::before,.bdr::before {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+  .bdb::before,.bdt::before,.bdl::before,.bdr::before {
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+}
+
+@media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+  .bdb::before,.bdt::before,.bdl::before,.bdr::before {
+    width: 300%;
+    height: 300%;
+    -webkit-transform: scale(0.33333);
+    transform: scale(0.33333);
+  }
+}
